@@ -1,22 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
-import fs from 'fs';
-import path from 'path';
-
-// ─── Leer la DB local (JSON file) ───────────────────────────────────────────
-const dbPath = path.join(process.cwd(), 'src/lib/db.json');
-
-const readDB = () => {
-  if (!fs.existsSync(dbPath)) {
-    return { products: [], categories: [], brands: [], settings: {}, admins: [] };
-  }
-  return JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-};
-
-const writeDB = (data: any) => {
-  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
-};
+import pool from '@/lib/db';
 
 // ─── Configuración NextAuth ──────────────────────────────────────────────────
 export const authOptions: NextAuthOptions = {
@@ -46,17 +31,13 @@ export const authOptions: NextAuthOptions = {
           };
         }
 
-        // 2. Si no es el admin de entorno, buscar en db.json (solo lectura para evitar errores en Vercel)
+        // 2. Si no es el admin principal, buscar en la tabla admins (MySQL)
         try {
-          const db = readDB();
-          const admins = db.admins || [];
-
-          const admin = admins.find(
-            (a: any) => a.email.toLowerCase() === credentials.email.toLowerCase()
-          );
+          const [rows] = await pool.query('SELECT * FROM admins WHERE email = ?', [credentials.email.toLowerCase()]);
+          const admin = (rows as any[])[0];
 
           if (admin) {
-            const isValid = await bcrypt.compare(credentials.password, admin.passwordHash);
+            const isValid = await bcrypt.compare(credentials.password, admin.password_hash);
             if (isValid) {
               return {
                 id: String(admin.id),
@@ -67,7 +48,7 @@ export const authOptions: NextAuthOptions = {
             }
           }
         } catch (error) {
-          console.error("Error al leer admins:", error);
+          console.error("Error al buscar admin en MySQL:", error);
         }
 
         return null;
