@@ -85,8 +85,8 @@ export default function AdminCategories() {
           </form>
           
           <div className="space-y-3 flex-grow">
-            {categories.map((cat) => (
-              <div key={cat} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
+            {(categories || []).map((cat) => (
+              <div key={cat || Math.random()} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
                 <span className="font-bold text-gray-700">{cat}</span>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => deleteCategory(cat)} className="text-red-400 hover:text-red-600"><Trash2 size={16} /></button>
@@ -127,8 +127,8 @@ export default function AdminCategories() {
           </form>
           
           <div className="space-y-3 flex-grow">
-            {brands.map((brand) => (
-              <div key={brand} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
+            {(brands || []).map((brand) => (
+              <div key={brand || Math.random()} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group">
                 <span className="font-bold text-gray-700">{brand}</span>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => deleteBrand(brand)} className="text-red-400 hover:text-red-600"><Trash2 size={16} /></button>

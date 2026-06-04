@@ -41,7 +41,9 @@ export default function AdminProducts() {
     setFormData({ name: '', price: '', stock: '', shippingPrice: '0', category: categories[0] || '', brand: brands[0] || '', description: '', imageUrl: '' });
   };
 
-  const filteredProducts = products.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredProducts = (products || []).filter(p => 
+    p && p.name && p.name.toLowerCase().includes((searchTerm || '').toLowerCase())
+  );
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -100,23 +102,23 @@ export default function AdminProducts() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredProducts.map((p) => (
-                <tr key={p.id} className="hover:bg-gray-50 transition-colors group">
+                <tr key={p.id || Math.random()} className="hover:bg-gray-50 transition-colors group">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src={p.imageUrl} alt={p.name} className="object-cover w-full h-full" />
+                        <img src={p.imageUrl || ''} alt={p.name || 'Producto'} className="object-cover w-full h-full" />
                       </div>
                       <div>
-                        <span className="font-bold text-brand-dark block">{p.name}</span>
-                        <span className="text-xs text-gray-400 font-medium">{p.category} • {p.brand}</span>
+                        <span className="font-bold text-brand-dark block">{p.name || 'Sin Nombre'}</span>
+                        <span className="text-xs text-gray-400 font-medium">{p.category || '-'} • {p.brand || '-'}</span>
                       </div>
                     </div>
                   </td>
-                  <td className="py-4 px-6 font-bold text-brand-dark">Q{p.price.toFixed(2)}</td>
+                  <td className="py-4 px-6 font-bold text-brand-dark">Q{(p.price || 0).toFixed(2)}</td>
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${p.stock > 0 ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                      <span className="font-medium text-gray-600">{p.stock} en stock</span>
+                      <span className={`w-2 h-2 rounded-full ${(p.stock || 0) > 0 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                      <span className="font-medium text-gray-600">{p.stock || 0} en stock</span>
                     </div>
                   </td>
                   <td className="py-4 px-6 text-right">
