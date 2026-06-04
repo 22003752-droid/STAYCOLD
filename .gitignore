@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.next/
+
+# Environment variables (NEVER commit these)
+.env.local
+.env.production
+.env*.local
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log*
+
+# OS
+.DS_Store
+*.tgz
+
+# Build output
+out/
+dist/
+build/
+
+# Node binaries (el zip de Node que tienes en el proyecto)
+node-v20.12.2-darwin-x64/
+node-v20.12.2-darwin-x64.tar.gz

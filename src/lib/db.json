@@ -1,0 +1,73 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Termo Staycold Explorer",
+      "price": 35.99,
+      "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=800",
+      "category": "Deportivos",
+      "brand": "Staycold Premium",
+      "ounces": 40,
+      "isNew": true,
+      "description": "El termo definitivo para tus aventuras. Mantiene el frío por 24 horas y el calor por 12 horas. Acero inoxidable de doble pared.",
+      "stock": 50,
+      "shippingPrice": 15
+    },
+    {
+      "id": 2,
+      "name": "Pachón Kids Adventure",
+      "price": 19.99,
+      "imageUrl": "https://images.unsplash.com/photo-1544605481-81d3bc2c9e78?auto=format&fit=crop&q=80&w=800",
+      "category": "Niños",
+      "brand": "Staycold Basic",
+      "ounces": 12,
+      "description": "Perfecto para el regreso a clases. Antiderrames, ligero y con colores divertidos que a tus hijos les encantarán.",
+      "stock": 20,
+      "shippingPrice": 10
+    },
+    {
+      "name": "Owala IceCold",
+      "price": 320,
+      "stock": 11,
+      "shippingPrice": 35,
+      "category": "40 onz",
+      "brand": "Owala",
+      "description": "Owala en oferta ",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYrx3dXvT9_PSftc5MYGKsgF9ni6Y0ajlJ_g&s",
+      "ounces": 24,
+      "id": 1778722633088
+    },
+    {
+      "name": "Owala cherry",
+      "price": 134,
+      "stock": 25,
+      "shippingPrice": 35,
+      "category": "24 onz",
+      "brand": "Owala",
+      "description": "jashjsahjkdajhkashjkdhjkahjksjhkads",
+      "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PEA4NDQ0QDw0NDQ0PDQ0NDQ8NDQ0NFREWFhURFRUYHDQgGBolGxUVIT0hJy8wLi4wFx8/RD8sNyotNSsBCgoKDg0OFhAQFS0fHR0rLi0tLSstNy0uLS0tLSsrLS0rLy0tLS0tLS0tLS0tLSsrKysrLSstLS0tLS0rLS0tLf/AABEIAP8AxgMBEQACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABAUGBwMCAf/EAEsQAAICAAIDCA0GDAcBAAAAAAABAgMEEQUhMQcSNEFRc7GyBhMyMzVScXJ0gaHB0SJCU2GRoiMlRFRig4SSk5Sz0yRjZKPCw+EV/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EAC8RAQEAAQEGBAYCAQUAAAAAAAABAgMEETEyUXESEyEzFCJBYYGxUvAjBTRDkdH/2gAMAwEAAhEDEQA/AOtEgAAAAAAAAAAAAH42gmY28I8bMXVHurIrytIr4ovNLO/RJZp3CR7q1L2keOL/AA+fR9YPTWEul2uq+MpvPKGyTy5M9pMylUy0ssfWxkCzMAAAAAAAAAAAAAAAAAAAAB4YnFKHzZSlxRhFt/8AhHaL44eL67mFxmkMU9lcq4+a2/tKZeLo6sMNOfdjLrLGlKU21JtLOettbdW3IzbRj8Q9pCzCY97QVD2PX7zSGCl/qYR9Uvk+8tjxYavLXbTdwgAAAAAAAAAAAAAAAAAA/JSSTbeSSzb5EBh7dKSm2ofJhxP5z+AX8LwlXB65a3yttlvFUvKWcNdcmvqT1MmZdUbkitw90t/OuMra84OcfkW158Uo/ZtJuGOS+Oplj9UmNweebqkp/ov5M/s4zDLRs4erow15ePo1jSOabTTTW1NZMxs3N9+9gqrlXfRY3kq8RTNvkUZpvoLYstTg75TdCcVOuSlCSzjKLzTRu899gAAAAAAAAAAAAAAAAADD9kmK3lca09dj1+atvtyEWxjCYewloodwVT3YgJYfHSTkrE3C2OqNkNUsvFfFKP1P2PWTLuNz6p0nG38HLKNyWeS1Ka8aPw4vaazLerY8MZe2spxjZHksWeXke1C4y8YmZWcK1zG0YST112w5uxNfeRTycV/Nv1bvuaaVjN2YSG/3tVMJJ2STlJ571vVx7CM2Nb4UQAAAAAAAAAAAAAAAAAGpdkt2+v3vFXCK9b1vpQaYcGPrmSs+5WhCW+0JYzE2AYXSMN+tTcZRecJxeUoy5UxCxLhuyTJ9pxuUJrVG7LKuzzvFfs8hrjn1U3PXGNPWtaexrWmiyGZ3MLd7pBx4p4a5P1OL9xnmiuumaAAAAAAAAAAAAAAAAAA0XTFu+xFz/wAxr7NXuDXHgnUiUvmVgEmItQGOvsAxt8gMJpXDRsTTXE9YRWFssnB/JdsFks4xb3uaWXEzOeKLWx1bcRujOONUkpWwlS1ZJJ2drkpZxz25ZxzyLb79WWTqJKoAAAAAAAAAAAAAAAAAa7boeiU5zlv25TlJ5Pjbz1JI48toylrux0puh/8AKwvJJvkTm3nq+JT4jLqt5U6PmejMN4knsySc3J6s3qzI+Iz6pmjj0eNmiMK/mZ5rxp/Eefn1Wmjj0SXaHwv0f3pfEr8RqdWnkYdEF+hsL9F96XxI+I1OqfIw6MdidC4X6P70/iPiNTqj4fDowuN0FhnnlW/35/EtNoz6q3Z8OjYNynCwpxOJjDNdsoTabb7may2+cdOjqXK7q5NfTmMljp50OUAAAAAAAAAAAAAAAAANcx+loUtxlVbY82vwKhPJ+qWr1nmZzdbK9bT0sssZYnen4tasFinn+jTF+2wru+y/k5dXlZpp5ZLR2Ka8/Cxezl7cPD9lppX+Tws07ZxaOxC2JZ24LZ/GHhWmleqO7T9n5hf/ABsF/eI8P3i/l5dEN2nrPzG/+Lg/7pHh+8/v4PBn0/v/AGgv07P8yv8A38K/+wmYfef38I8Gf8f1/wCsdiNOcuFvXqqfRMmY/dS45fxra9zipyveIU6t7LDyTr7bB3xzlFrfVp5rZxnVoY7rxcG1X03WV0Y63EAAAAAAAAAAAAAAAAAHPLZZyk+WUuk8jK+tfV4T5Z2FIiJ3PmciyEtsvrIElsiEorZEoQ32ExS1jMRMvIyyrYdyuz8YpeNRcvYn7jo0eZ522cjs51vNAAAAAAAAAAAAAAAAADnMu6l5z6Tx7xr6zHlhmCvixkoTWgRXMCK1hCDEyyLRnkw+IuzzyNZHNlm2bcrf4yr5q/qM20uZx7VfkdtOp5wAAAAAAAAAAAAAAAAAc5tWUprknJe08fLjX1end+M7PkJr4mShNaBFaQI7WSisHj7W20tiNcY5tSsdM0YWNx3JYZ6QT8XD3PoXvNdLi5Np5XaTpcAAAAAAAAAAAAAAAAAIDneJ75ZzlnWZ5GfNX1Wl7ePaPMhZ5zJQmsAjuIEN5MVrCXrW/KaRz5IrYl4ysbpuQL/HT9Ft60DfS4uLauV2M6XAAAAAAAAAAAAAAAAAAHOsV323nbOszyM+a931Oj7ePafp55kLvOZKE9gEdrIEF5aK1hr9r8peOfJHaXjOtz3IeHT9Ft60DfR4uHauV2I6XAAAAAAAAAAAAAAAAAAHO8Z323nbOszyM+a931Oh7ePafp4lV3xIlFTWkiO4gQ3ForWGv2svHPkjsLxnW57kXDp+i29aBvo8XDtXK7EdLgAAAAAAAAAAAAAAAAADneN77dztnWZ5OpzXu+o0Paw7T9PEo1ecyVU9oEVwEVxMVrDYjazSOfJHYXjOty3IuHT9Ft60DfR4uHauX8uxnS4AAAAAAAAAAAAAAAAAA51ju/Xc9Z1meTqc17vqND28e0eJRq+JkqprQI7gIri0VrDYjay8YZcUlheMq3Hcj4fP0W3rQN9Hi4dr5XYzpcAAAAAAAAAAAAAAAAAAc6x/frues6zPJ1Oe931Gh7WPafp4so1eciVU9oEVwEVxaK1h8RtZeOfJJMvGdbjuR8Pl6Lb1oG+lxcW18v5djOl54AAAAAAAAAAAAAAAAAc70j3+7nreszydTnvd9Rs/tYdonZRq+JEqprAI7iRDcTFaxN+1l4wy4o7C8ZVuO5Jw+Xo1vTA30eZxbVyuxnS88AAAAAAAAAAAAAAAAAOdaR7/AH89Z1meTqc97vqNn9rDtE7KNHzIlCa0kRWgRXExWsRftZeOfJLYXZ1uG5Lw+Xo13TA30eLi2rk/LsZ0vPAAAAAAAAAAAAAAAAADneku/wB/PWdZnk6nPX0+z+1h2iZlWtecyVU9gSitCEVxMVrE37WaRhklsLRnW37k3hB+jXdMTfR5nFtXJ+XZDpeeAAAAAAAAAAAAAAAAAHOtJ9/v56zrM8nU573fT7P7WHaJ2VaPOZKE1gEdoKhuJjOsTftZpGNSzLRnW37k3hD9mu6Ym+lxce1cjsp0vPAAAAAAAAAAAAAAAAADnWlOEX89Z1meVq89fTbN7WHaJmUa15zJQmsAjtCKiuLKVib9rLxjUsy0ZVt25P4Q/Z7v+Jvpczj2rldmOlwAAAAAAAAAAAAAAAAABzrSvCL+es6zPK1eevpdm9rDslZRs85koTWASWkoqG4lSsVftZeMalmXjOtu3KPCC9Hu9xtpcXFtXK7MdLgAAAAAAAAAAAAAAAAADnOluEX89Z1meVq89fS7N7OHZKyjZ5zJQnsAjtBUVxZnWLv2svGOSWZeM62zcp8ILmLuhG2lxce1crs50vPAAAAAAAAAAAAAAAAADnWleEX89Z0nm3Hfq2X7votHKzQxs6RKympJMrI207vxlrymVWT2ARWgR2lozrFX7WXjHJNMvGVbZuVeEI8xd0I20uLj2nldnOlwAAAAAAAAAAAAAAAAABzrSvCL+en0nn7/APLX0OnP8GHHhOCWRlqTdlY307vxleUyqya0CO0CO0mKVi71rZpKwyTTRaM7G1bljy0jD66bl93P3G+lfVx7TPkdoOl54AAAAAAAAAAAAAAAAAc50nwi/nrOszzp735fQ4+mz49omkZ5819d7ow5Z6bnlIqlNaBHaBHaWilR2QJUqadZMqljPbnT3uk8N+l25f7U/gdGlfmcW1T/AB12w63lgAAAAAAAAAAAAAAAABznSXCL+es6zPO/5b+X0WH+3x7RNIpqc1badlxm6bnlMoumtAjtCElpZSo7SVKlsmTIpazW59PPSeE8tv8ASmdGlPmcW1Zb8K7gdbywAAAAAAAAAAAAAAAAA5zpThF/PWdZnl6npnbOr6bZ5v0cd/SJmZ72255zRKE1oEdqAksRMUqS1FmdRWotGdZnc98J4TzrP6Uzo0uZxbTyV3I6nmAAAAAAAAAAAAAAAAABznTPycTen9LJ+pvNdJ5etN2dfS7JlLo4dkykjN0viciUJbZEISWMlFS2MmK1HayzOorpF4yyrObnVblpLDZa9722T+qKrlr+1r7TfS4uDab8lduOp5wAAAAAAAAAAAAAAAA8r63JankwNP092NYqyTsqcXLL53H6zLU0pn6unQ2rLS9Po1fE6G0tX+SSn9dc4te1o57s9d+P+oY/VBbVpGPdYLEL9W5dBXyMujT47T6pLbcatuExH8vZ8CPIy6J+Nw/kmlZjH+S4j+Xt+BPk3ordsw/k+HTj5dzg8Q/1M10ot5N6KXbMOr9joTS1nc4G/wArUYr2stNGsstrx6rMP2CaZs20xrXLObbXqS95eaVY5bXPpG9dhnYXdgm7JzUrZpKU8sso+LFcSNccdzmz1Lm3quLSybzLs30AAAAAAAAAAAAAAAAAAAAAB+ZAfoAAAAAAAAAAAAAP/9k=",
+      "ounces": 24,
+      "id": 1778978324484
+    }
+  ],
+  "categories": [
+    "Deportivos",
+    "Oficina",
+    "Niños",
+    "Aventura",
+    "24 onz"
+  ],
+  "brands": [
+    "Staycold Premium",
+    "Staycold Basic",
+    "Owala",
+    "Yeti"
+  ],
+  "settings": {
+    "whatsappNumber": "50200000000",
+    "storeName": "Staycold Oficial",
+    "instagramUrl": "",
+    "tiktokUrl": "",
+    "facebookUrl": ""
+  }
+}
