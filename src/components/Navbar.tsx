@@ -192,7 +192,7 @@ export default function Navbar() {
                             <Trash2 size={16} />
                           </button>
                         </div>
-                        <span className="font-black text-lg text-brand-dark mt-1">Q{item.product.price.toFixed(2)}</span>
+                        <span className="font-black text-lg text-brand-dark mt-1">Q{(item.product.price || 0).toFixed(2)}</span>
                         <div className="mt-auto flex items-center gap-3">
                           <div className="flex items-center bg-gray-50 rounded-lg border border-gray-200">
                             <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="px-3 py-1 font-bold text-gray-500 hover:text-brand-dark">-</button>

@@ -168,18 +168,23 @@ export const useStore = create<StoreState>()(
             body: JSON.stringify(product)
           });
           const newProduct = await res.json();
-          set((state) => ({ products: [...state.products, newProduct] }));
+          if (!newProduct.error) {
+            set((state) => ({ products: [...state.products, newProduct] }));
+          }
         } catch (e) { console.error(e); }
       },
       updateProduct: async (product) => {
         try {
-          await fetch('/api/products', {
+          const res = await fetch('/api/products', {
             method: 'PUT',
             body: JSON.stringify(product)
           });
-          set((state) => ({
-            products: state.products.map(p => p.id === product.id ? product : p)
-          }));
+          const updatedProduct = await res.json();
+          if (!updatedProduct.error) {
+            set((state) => ({
+              products: state.products.map(p => p.id === product.id ? product : p)
+            }));
+          }
         } catch (e) { console.error(e); }
       },
       deleteProduct: async (id) => {

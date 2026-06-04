@@ -59,7 +59,7 @@ export default function ProductCard(product: Product) {
         <p className="text-sm text-gray-400 font-medium mb-6">{category}</p>
         
         <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
-          <span className="font-black text-2xl text-brand-dark tracking-tight">Q{price.toFixed(2)}</span>
+          <span className="font-black text-2xl text-brand-dark tracking-tight">Q{(price || 0).toFixed(2)}</span>
           <button 
             onClick={handleAddToCart}
             className="bg-brand-dark text-white p-3 rounded-2xl hover:bg-brand-light transition-all shadow-md hover:shadow-xl hover:scale-105 active:scale-95 duration-300 flex items-center justify-center"

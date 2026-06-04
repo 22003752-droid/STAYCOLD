@@ -35,11 +35,13 @@ function CatalogContent() {
     setSearchTerm(query);
   }, [query]);
 
-  const filteredProducts = allProducts.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          product.brand.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredProducts = (allProducts || []).filter(product => {
+    if (!product || !product.name || !product.brand) return false;
+    
+    const matchesSearch = product.name.toLowerCase().includes((searchTerm || '').toLowerCase()) || 
+                          product.brand.toLowerCase().includes((searchTerm || '').toLowerCase());
     const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory;
-    const matchesPrice = product.price <= maxPrice;
+    const matchesPrice = (product.price || 0) <= maxPrice;
     
     return matchesSearch && matchesCategory && matchesPrice;
   });
