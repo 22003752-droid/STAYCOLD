@@ -18,30 +18,6 @@ const writeDB = (data: any) => {
   fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
 };
 
-// ─── Inicializar admin por defecto si no existe ninguno ─────────────────────
-export async function ensureDefaultAdmin() {
-  const db = readDB();
-  if (!db.admins) db.admins = [];
-
-  if (db.admins.length === 0) {
-    const defaultEmail = process.env.ADMIN_EMAIL || 'admin@staycold.com';
-    const defaultPassword = process.env.ADMIN_PASSWORD || 'StayCold2024!';
-    const passwordHash = await bcrypt.hash(defaultPassword, 12);
-
-    db.admins.push({
-      id: 1,
-      email: defaultEmail,
-      passwordHash,
-      name: 'Administrador',
-      role: 'admin',
-      createdAt: new Date().toISOString(),
-    });
-
-    writeDB(db);
-    console.log(`✅ Admin creado: ${defaultEmail}`);
-  }
-}
-
 // ─── Configuración NextAuth ──────────────────────────────────────────────────
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -54,27 +30,47 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        // Asegura que existe al menos un admin
-        await ensureDefaultAdmin();
+        // 1. Validar primero contra las variables de entorno de Vercel
+        const envEmail = process.env.ADMIN_EMAIL || 'admin@staycold.com';
+        const envPassword = process.env.ADMIN_PASSWORD || 'StayCold2024!';
 
-        const db = readDB();
-        const admins = db.admins || [];
+        if (
+          credentials.email.toLowerCase() === envEmail.toLowerCase() &&
+          credentials.password === envPassword
+        ) {
+          return {
+            id: "1",
+            email: envEmail,
+            name: 'Administrador Principal',
+            role: 'admin',
+          };
+        }
 
-        const admin = admins.find(
-          (a: any) => a.email.toLowerCase() === credentials.email.toLowerCase()
-        );
+        // 2. Si no es el admin de entorno, buscar en db.json (solo lectura para evitar errores en Vercel)
+        try {
+          const db = readDB();
+          const admins = db.admins || [];
 
-        if (!admin) return null;
+          const admin = admins.find(
+            (a: any) => a.email.toLowerCase() === credentials.email.toLowerCase()
+          );
 
-        const isValid = await bcrypt.compare(credentials.password, admin.passwordHash);
-        if (!isValid) return null;
+          if (admin) {
+            const isValid = await bcrypt.compare(credentials.password, admin.passwordHash);
+            if (isValid) {
+              return {
+                id: String(admin.id),
+                email: admin.email,
+                name: admin.name,
+                role: admin.role,
+              };
+            }
+          }
+        } catch (error) {
+          console.error("Error al leer admins:", error);
+        }
 
-        return {
-          id: String(admin.id),
-          email: admin.email,
-          name: admin.name,
-          role: admin.role,
-        };
+        return null;
       },
     }),
   ],
